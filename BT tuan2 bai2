@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class EX4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập n:");
+        int n = sc.nextInt();
+        int[][] arr = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("Nhập giá trị cho arr[%d][%d]:", i, j);
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("Hiển thị mảng vừa nhập");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%8d", arr[i][j]);
+            }
+            System.out.println();
+        }
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        System.out.println("Tổng các phần tử nằm trên đường chéo chính của mảng: " + sum);
+    }
+}
